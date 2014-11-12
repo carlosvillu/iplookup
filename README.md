@@ -33,6 +33,8 @@ The goal of this service is to provide an api with the following format,
 	
 	200 {country: [country code]}
 	404 not found (:ip is not IPv4)
+	
+Example: `http://ip.walmit.com/api/v1/ip/121.111.239.192`
 
 #### How it works
 
