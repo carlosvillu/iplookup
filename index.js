@@ -6,7 +6,6 @@ var express = require( 'express' ),
     app = express(),
     IpLookup = require( './libs/iplookup' ),
     Radix = require( './libs/radex-tree' ),
-    ipReg = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/,
     start = +new Date(),
     ipLookup;
 
@@ -18,16 +17,15 @@ nconf.argv()
 var PORT = nconf.get( 'PORT' ) || 3000,
     FILE = nconf.get( 'file' ) || path.join( __dirname, 'db', 'partial.csv' );
 
-router.param( 'ip', ipReg );
 router.get( '/api/v1/ip/:ip', function( req, res, next ){
-  var ip = req.params.ip[0];
+  var ip = req.params.ip;
 
   debug( 'Search for %s ...', ip );
   res.json( { country: iplookup.searchByIp( ip ) } );
 } );
 
 router.use( function( req, res, next ){
-  res.send( 404, 'Not found' );
+  res.status( 404 ).send( 'Not found' );
 } );
 
 app.use('/', router);

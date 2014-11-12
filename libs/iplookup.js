@@ -7,13 +7,7 @@ var IpLookup = function( store ){
 };
 
 IpLookup.prototype.searchByIp = function( ip ){
-  var ipLong = IP.toLong( ip ); 
-  debug( 'Convert ip %s to longIP %s', ip, ipLong );
-  return this.searchByLongIp( ipLong );
-};
-
-IpLookup.prototype.searchByLongIp = function( ipLong ){
-  return this._store.find( ''+ipLong );
+  return this._store.find( '' + ip );
 };
 
 IpLookup.prototype.generateFromFile = function( file, cb ){
@@ -22,7 +16,7 @@ IpLookup.prototype.generateFromFile = function( file, cb ){
       start = +new Date();
   debug( 'Start to parse %s wait', file );
   reader.on( 'data', function( data ){
-    self._store.insert( ''+data[0], data[2] );
+    self._store.insert( '' + IP.fromLong( data[0] ), data[2] );
   } )
   .on( 'end', function(){
     debug( 'File %s parsed insert %d ips (%dsec)', file, self._store.getNumberOfRealNodes(), (+new Date() - start) / 1000 );
