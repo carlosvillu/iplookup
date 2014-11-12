@@ -1,0 +1,34 @@
+{
+  "name": "iplookup",
+  "version": "1.0.0",
+  "description": "Microservice effective iplookup",
+  "main": "index.js",
+  "scripts": {
+    "install": "./install.sh",
+    "start": "DEBUG=iplookup* node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlosvillu/iplookup"
+  },
+  "keywords": [
+    "microservice",
+    "ip",
+    "lookup",
+    "geoip"
+  ],
+  "author": "Carlos Villuendas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlosvillu/iplookup/issues"
+  },
+  "homepage": "https://github.com/carlosvillu/iplookup",
+  "dependencies": {
+    "debug": "^2.1.0",
+    "express": "^4.10.2",
+    "ip": "^0.3.2",
+    "nconf": "^0.6.9",
+    "ya-csv": "^0.9.4"
+  }
+}
