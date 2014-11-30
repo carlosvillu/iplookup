@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         workspace: '/tmp/' + pkg.name,
 
         // Project will be deployed in this directory.
-        deployTo: '/home/carlosvillu/proyectos/iplookup',
+        deployTo: '/home/carlosvillu/proyectos/' + pkg.name,
 
         // Repository url.
         repositoryUrl: pkg.repository.url,
@@ -28,6 +28,7 @@ module.exports = function (grunt) {
     // Staging environment.
       staging: {
         servers: ['carlosvillu@92.222.40.10']
+
       }
     }
   });
