@@ -30,5 +30,9 @@
     "ip": "^0.3.2",
     "nconf": "^0.6.9",
     "ya-csv": "^0.9.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-shipit": "^0.4.3"
   }
 }
