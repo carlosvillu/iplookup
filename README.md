@@ -1,4 +1,4 @@
-# GeoIP lookup microservice
+# GeoIP lookup microservice (1.0.0)
 
 ### Install
 
